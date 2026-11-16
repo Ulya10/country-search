@@ -1,5 +1,5 @@
 import type { Country } from '../types';
-import { HttpError } from '../api/HttpError';
+import { HttpError } from '../api/HttpError.js';
 
 export type Outcome =
   | { status: 'aborted' }

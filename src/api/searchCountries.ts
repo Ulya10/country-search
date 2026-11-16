@@ -1,6 +1,6 @@
 import type { Country, RawCountry } from '../types';
-import { mapCountryResponse } from '../utils/mapCountryResponse';
-import { HttpError } from './HttpError';
+import { mapCountryResponse } from '../utils/mapCountryResponse.js';
+import { HttpError } from './HttpError.js';
 
 const API_BASE = 'https://countries.dev/name';
 const TIMEOUT_MS = 5000;
