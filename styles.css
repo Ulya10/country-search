@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #222;
+}
+
+input[type='search'] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.status-area {
+  margin-top: 1rem;
+}
+
+.status {
+  padding: 0.75rem 0;
+  color: #555;
+}
+
+.status.error {
+  color: #b00020;
+}
+
+.status.error button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #b00020;
+  background: white;
+  color: #b00020;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.card:hover,
+.card:focus-visible {
+  background: #f7f7f7;
+  outline: none;
+}
+
+.card img {
+  width: 48px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.card-meta {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 480px;
+  width: calc(100% - 2rem);
+  max-height: calc(100% - 2rem);
+  overflow: auto;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin: 0.4rem 0;
+}
+
+.modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #222;
+  background: #222;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
