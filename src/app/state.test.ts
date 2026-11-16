@@ -139,4 +139,20 @@ describe('state', () => {
     const last = renders[renders.length - 1]!;
     expect(last.status).toBe('idle');
   });
+
+  it('does not ask a pending debounce if the input is cleared first', async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+
+    const renders: AppState[] = [];
+    const app = createApp((s) => renders.push(s), { debounceMs: 300 });
+
+    app.onInput('fra');
+    await vi.advanceTimersByTimeAsync(100);
+    app.onInput('');
+    await vi.advanceTimersByTimeAsync(300);
+
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(renders[renders.length - 1]!.status).toBe('idle');
+  });
 });

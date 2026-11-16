@@ -65,4 +65,28 @@ describe('debounce', () => {
     vi.advanceTimersByTime(300);
     expect(fn).toHaveBeenCalledTimes(1);
   });
+
+  it('cancel prevents the pending invocation', () => {
+    const fn = vi.fn();
+    const debounced = debounce(fn, 300);
+
+    debounced('x');
+    debounced.cancel();
+    vi.advanceTimersByTime(300);
+
+    expect(fn).not.toHaveBeenCalled();
+  });
+
+  it('cancel after fire is no-op', () => {
+    const fn = vi.fn();
+    const debounced = debounce(fn, 300);
+
+    debounced();
+    vi.advanceTimersByTime(300);
+    expect(fn).toHaveBeenCalledTimes(1);
+
+    debounced.cancel();
+    vi.advanceTimersByTime(300);
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
 });
