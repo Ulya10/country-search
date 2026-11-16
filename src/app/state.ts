@@ -83,6 +83,7 @@ export function createApp(render: (s: AppState) => void, options: AppOptions = {
       lastQuery = trimmed;
 
       if (trimmed.length === 0) {
+        debouncedSearch.cancel();
         setState(IDLE);
         return;
       }
