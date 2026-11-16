@@ -1,6 +1,6 @@
 import { createApp, type AppState } from './app/state.js';
 import { render } from './ui/render.js';
-import { showDetail } from './ui/detail.js';
+import { showDetail } from './ui/details.js';
 
 const input = document.createElement('input');
 input.type = 'search';

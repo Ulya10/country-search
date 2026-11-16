@@ -3,7 +3,7 @@ import type { Country, RawCountry } from '../types';
 export function mapCountryResponse(raw: RawCountry): Country {
   return {
     name: raw.name,
-    flag: raw.flag ?? '',
+    flag: raw.flags?.svg ?? raw.flags?.png ?? raw.flag ?? '',
     capital: raw.capital ?? '',
     region: raw.region,
     population: raw.population,

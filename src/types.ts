@@ -13,6 +13,7 @@ export interface RawCountry {
   topLevelDomain: string[];
   borders: string[];
   flag: string;
+  flags?: { svg?: string; png?: string };
 }
 
 export interface Country {

@@ -17,13 +17,14 @@ const france: RawCountry = {
   topLevelDomain: ['.fr'],
   borders: ['BEL', 'DEU', 'ITA', 'LUX', 'ESP', 'CHE'],
   flag: 'https://countries.dev/flags/fr.svg',
+  flags: { svg: 'https://flagcdn.com/fr.svg', png: 'https://flagcdn.com/w320/fr.png' },
 };
 
 describe('mapCountryResponse', () => {
   it('maps a full country record to the UI shape', () => {
     expect(mapCountryResponse(france)).toEqual({
       name: 'France',
-      flag: 'https://countries.dev/flags/fr.svg',
+      flag: 'https://flagcdn.com/fr.svg',
       capital: 'Paris',
       region: 'Europe',
       population: 67391582,
